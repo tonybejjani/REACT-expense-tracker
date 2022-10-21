@@ -11,14 +11,15 @@ const ExpenseItem = (props) => {
   //   setTitle((prevTitle) => props.Title);
   // };
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <p className="expense-item__price">${props.amount}</p>
-        {/* <button onClick={updateTitleHandler}>Update title</button> */}
-      </div>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <p className="expense-item__price">${props.amount}</p>
+        </div>
+      </Card>
+    </li>
   );
 };
 
