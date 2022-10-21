@@ -1,14 +1,10 @@
 .new-expense__controls {
-  display: none;
+  display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1rem;
   text-align: left;
 
-}
-
-.new-expense__controls.collapse-form {
-  display: flex;
 }
 
 .new-expense__control label {
@@ -27,18 +23,5 @@
 }
 
 .new-expense__actions {
-  text-align: center;
-}
-
-.new-expense__actions.collapse-center {
   text-align: right;
-}
-
-.new-expense__actions-btn-hide {
-  display: none;
-}
-
-.new-expense__actions-btn-show {
-  display: inline;
-
 }
