@@ -13,13 +13,17 @@ const ExpenseForm = (props) => {
     'new-expense__actions'
   );
 
+  const [cancelBtn, setCancelBtn] = useState('new-expense__actions-btn-hide');
+
   const collapseFormCheck = () => {
-    if (collapseFormClass.includes('collapse-form')) {
-      setCollapseFormClass('new-expense__controls');
-      setAlignExpenseBtn('new-expense__actions');
-    } else {
+    if (!collapseFormClass.includes('collapse-form')) {
       setCollapseFormClass('new-expense__controls collapse-form');
       setAlignExpenseBtn('new-expense__actions collapse-center');
+      setCancelBtn('new-expense__actions-btn-show');
+    } else {
+      setCollapseFormClass('new-expense__controls');
+      setAlignExpenseBtn('new-expense__actions');
+      setCancelBtn('new-expense__actions-btn-hide');
     }
   };
   const getTitleHandler = (event) => {
@@ -87,7 +91,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className={alignExpenseBtn}>
-        <button type="cancel" onClick={cancelHandler}>
+        <button type="cancel" className={cancelBtn} onClick={cancelHandler}>
           Cancel
         </button>
         <button type="submit">Add New Expense</button>
