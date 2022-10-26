@@ -1,27 +1,11 @@
 /** @format */
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
   const titleInputRef = useRef();
   const amountInputRef = useRef();
   const dateInputRef = useRef();
-
-  // const [enteredTitle, setEnteredTitle] = useState('');
-  // const [enteredAmount, setEnteredAmount] = useState('');
-  // const [enteredDate, setEnteredDate] = useState('');
-
-  // const getTitleHandler = (event) => {
-  //   setEnteredTitle(event.target.value);
-  // };
-
-  // const getAmountHandler = (event) => {
-  //   setEnteredAmount(event.target.value);
-  // };
-
-  // const getDateHandler = (event) => {
-  //   setEnteredDate(event.target.value);
-  // };
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -35,6 +19,11 @@ const ExpenseForm = (props) => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
+
+    //reset the form inputs
+    titleInputRef.current.value = '';
+    amountInputRef.current.value = '';
+    dateInputRef.current.value = '';
 
     props.onSaveExpenseData(expenseData);
   };
